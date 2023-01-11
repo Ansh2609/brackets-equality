@@ -1,0 +1,35 @@
+import unittest
+'''
+Write a RECURSIVE function that performs the same
+functionality as the function in Brackets.py.
+'''
+
+def find_balance(s):
+    '''
+    Takes a string of brackets as an argument. Will return
+    True or False, depending on whether or not the string 
+    is balanced. An empty string is balanced.
+    find_balance("}}}{") -> False
+    find_balance("{}{}") -> True
+    '''
+    count = 0
+    for i in range(s):
+        if i == '{':
+            count = +1
+        else:
+            count =- 1
+    return count == 0
+
+class Testing(unittest.TestCase):
+    def Testcase1(self):
+        self.assertEqual(find_balance['}}{{'],True)
+    
+if __name__ == '__main__':
+    unittest.main(exit=True)
+
+        
+
+'''
+Note: There are no tests included in this file. Use the
+tests you've written in CreateTest.py to test your code.
+'''
